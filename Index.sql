@@ -18,4 +18,4 @@ SELECT d.Name AS Department, c.Name AS Category FROM departments AS d JOIN categ
 SELECT p.Name AS Product, SUM(s.Quantity) AS NumberSold, SUM(s.PricePerUnit) AS PriceSold FROM products AS p JOIN sales AS s ON p.ProductID = s.ProductID WHERE p.Name = "Eagles: Hotel California" GROUP BY Product;
 
 /* joins: find Product name, reviewer name, rating, and comment on the Visio TV. (only return for the lowest rating!) */
-SELECT p.Name AS Product, r.Reviewer, r.Rating, r.Comment FROM products AS p JOIN reviews AS r ON p.ProductID = r.ProductID WHERE r.Rating = "1" AND p.Name = "Visio TV";
+SELECT p.Name AS Product, r.Reviewer, r.Rating, r.Comment FROM products AS p JOIN reviews AS r ON p.ProductID = r.ProductID WHERE r.Rating = "1" AND p.Name = "Visio TV" LIMIT 1;
